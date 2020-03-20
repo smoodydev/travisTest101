@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+<!--  This time, before block content, we're going to load the Bootstrap tags.
+This is something that the Django forms Bootstrap library provides for us to allow us to format our forms nicely.-->
+{% load bootstrap_tags %}
+{% block content %}
+    <h1>New Post</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+      <!-- good practice to remember to include csrf_token in every form that we create -->
+        {% csrf_token %}
+        <!-- | IS CALLED A PIPE SIGN -->
+        {{ form | as_bootstrap }}
+        <button type="submit" class="btn btn-info">Save</button>
+    </form>
+{% endblock %}
+    
+<!-- after all the views and templates have been created now we create our super user in the terminal -->

@@ -1,6 +1,6 @@
 # We're going to need a few more libraries apart from the standard render library, i.e get_object_404 etc
 
-from django.shortcuts import render, get_object_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
 from .forms import BlogPostForm
@@ -27,7 +27,7 @@ def post_detail(request, pk):
   post.save()
   return render(request, 'postdetail.html', {'post':post})
 
-def create_or_edit_post(request, pk=none):
+def create_or_edit_post(request, pk=None):
   """
   Create a view that allows us to create or edit a post depending if the post ID is null or not
   """

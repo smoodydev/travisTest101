@@ -18,7 +18,7 @@ Including another URLconf
 
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.views.generic import Redirectview
+from django.views.generic import RedirectView
 from django.views.static import serve
 from .settings import MEDIA_ROOT
 
@@ -27,7 +27,7 @@ from .settings import MEDIA_ROOT
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # below So in effect, this is our root directory. And if somebody goes to the root directory of our project, then we want to redirect them to posts.
-    url(r'^$', Redirectview.as_view(url='posts/')),
+    url(r'^$', RedirectView.as_view(url='posts/')),
     # Okay, for our next URL then, if somebody goes to the posts URL, then we want it to be passed using the URLs in the urls.py file in the posts app
     url(r'posts/', include('posts.urls')),
     # NO IDEA the following regular expression code does

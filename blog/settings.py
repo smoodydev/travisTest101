@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # In order to create our last template, which is going to be a form to create a new blog post, we're going to install the Django forms Bootstrap library. This will allow us to render a form easily without having to do a lot of styling on it.
+    'django_forms_bootstrap',
     # we need to tell Django that we have an app called posts
     'posts',
 ]
