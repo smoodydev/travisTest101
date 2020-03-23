@@ -1,0 +1,64 @@
+# Query: blog
+# Flags: IgnoreExcludeSettings
+
+36 results - 14 files
+
+manage.py:
+  6:     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
+
+README.md:
+  1: <!-- Django Blog Mini-Project -->
+  3: # Django Blog Mini-Project
+  5: A simple blog app written using Django
+  7: [![Build Status](https://travis-ci.org/aledgriffiths79/django-blog.svg?branch=master)](https://travis-ci.org/aledgriffiths79/django-blog)
+
+.git\config:
+  9: 	url = https://github.com/aledgriffiths79/django-blog.git
+
+.git\logs\HEAD:
+  14: b0f16d03d837da0d36e08190e6b4370118fcf6db 8d494ecd9f512484d74bddc8f72348cf42a93635 aledgriffiths79 <aledgriffiths08@hotmail.co.uk> 1584555849 +0000	commit: Your base template - the first HTML template that will be rendered when you run your project.It loads all your external CSS and JS links and your HTML code in this file will render your nav bar. Any other HTML files you create (e.g. blogposts.html) are extensions of your base.html file.You create a base.html and use {% extends 'base.html' %} to render any subsequent html files (e.g. blogposts.html) to the browser.
+
+.git\logs\refs\heads\master:
+  14: b0f16d03d837da0d36e08190e6b4370118fcf6db 8d494ecd9f512484d74bddc8f72348cf42a93635 aledgriffiths79 <aledgriffiths08@hotmail.co.uk> 1584555849 +0000	commit: Your base template - the first HTML template that will be rendered when you run your project.It loads all your external CSS and JS links and your HTML code in this file will render your nav bar. Any other HTML files you create (e.g. blogposts.html) are extensions of your base.html file.You create a base.html and use {% extends 'base.html' %} to render any subsequent html files (e.g. blogposts.html) to the browser.
+
+blog\settings.py:
+   2: Django settings for blog project.
+  45:     # In order to create our last template, which is going to be a form to create a new blog post, we're going to install the Django forms Bootstrap library. This will allow us to render a form easily without having to do a lot of styling on it.
+  61: ROOT_URLCONF = 'blog.urls'
+  82: WSGI_APPLICATION = 'blog.wsgi.application'
+
+blog\urls.py:
+   1: """blog URL Configuration
+  14:     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+
+blog\wsgi.py:
+   2: WSGI config for blog project.
+  14: os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blog.settings")
+
+posts\forms.py:
+  4: class BlogPostForm(forms.ModelForm):
+
+posts\models.py:
+  8:   A single Blog post
+
+posts\views.py:
+   6: from .forms import BlogPostForm
+  12:   Create a view that will return a list of Posts that were published prior to 'now' and render them to the 'blogposts.html' template
+  16:   # use the render library to return our blogposts.html temlplate, which is going to contain out list of posts
+  17:   return render(request, 'blogposts.html', {'posts':posts})
+  36:   # if this is a result of posting the form then we want to render out blogpost form
+  38:     form = BlogPostForm(request.POST, request.FILES, instance=post)
+  43:     form = BlogPostForm(instance=post)
+  44:   return render(request, 'blogpostform.html', {'form': form})
+
+posts\templates\postdetail.html:
+  13:             <img src="/media/{{ post.image }}" alt="" class="img-blogpost">
+  23:             <a href="{% url 'get_posts' %}" class="btn btn-default">Back to Blog</a>
+
+static\css\custom.css:
+  96: .img-blogpost{
+
+templates\base.html:
+   6:       <title>Stack - Bootcamp Blog</title>
+  50:                           <!--blogpost entries-->
+  53:                           <!--blogpost entries-->
