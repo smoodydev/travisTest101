@@ -4,4 +4,4 @@
 
 A simple blog app written using Django
 
-[![Build Status](https://travis-ci.org/aledgriffiths79/django-blog.svg?branch=master)](https://travis-ci.org/aledgriffiths79/django-blog)
+[![Build Status](https://travis-ci.org/DarilliGames/travisTest101.svg?branch=master)](https://travis-ci.org/DarilliGames/travisTest101)
